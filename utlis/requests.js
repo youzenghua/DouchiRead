@@ -5,6 +5,9 @@ function request(url, data, successCb, errorCb, completeCb) {
     wx.request({ 
         url: url, 
         method: 'GET', 
+        header: {
+          'content-type': 'json'
+        },
         data: data, 
         success: function(res) { 
             utils.isFunction(successCb) && successCb(res); 
